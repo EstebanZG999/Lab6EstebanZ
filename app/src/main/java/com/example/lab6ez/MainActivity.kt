@@ -57,7 +57,7 @@ fun principal() {
             ) {
                 Row() {
                     Text(
-                        text = "TodoEventos",
+                        text = "TodoEventos+ Con NAVEGACION",
                         modifier = Modifier
                             .padding(12.dp),
                         fontSize = 32.sp
