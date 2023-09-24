@@ -1,4 +1,4 @@
-package com.example.lab6ez
+package com.example.lab6ez.Screens
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -15,7 +15,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -26,62 +25,91 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.lab6ez.Navigation.AppNavigation
+import com.example.lab6ez.R
 import com.example.lab6ez.ui.theme.Lab6EZTheme
 
-class ListaLugares : ComponentActivity() {
+class Profile : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Lab6EZTheme() {
-                lugares()
+            Lab6EZTheme {
+                AppNavigation()
             }
         }
     }
 }
 
-
-@Preview(showBackground = true)
 @Composable
-fun lugares() {
-    Column {
+fun profile(navController: NavController) {
+    Column() {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(350.dp)
+                .background(Color.Blue), contentAlignment = Alignment.Center
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.imagen1),
+                contentDescription = null,
+                contentScale = ContentScale.Crop
+            )
+            Box(
+                modifier = Modifier
+                    .width(140.dp)
+                    .padding(top = 16.dp)
+                    .background(Color.Black, shape = CircleShape.also { })
+                    .height(140.dp)
+            ) {
+                Column() {
+                    Image(
+                        modifier = Modifier
+                            .clip(CircleShape),
+                        painter = painterResource(id = R.drawable.imagen3),
+                        contentDescription = null,
+                        contentScale = ContentScale.Crop
+                    )
+
+                }
+            }
+            Text(
+                text = "Esteban Zambrano",
+                modifier = Modifier.padding(top = 250.dp),
+                color = Color.White,
+                fontSize = 24.sp, fontStyle = FontStyle.Italic
+            )
+
+        }
         Box(
             modifier = Modifier
                 .background(Color.LightGray)
                 .height(100.dp)
                 .fillMaxWidth(),
-        ){
+        ) {
             Box(
                 modifier = Modifier.padding(10.dp)
+            ) {
+                Row {
 
-            ){
-                Row() {
                     Image(
                         modifier = Modifier
                             .clip(CircleShape),
-                        painter = painterResource(id = R.drawable.dualipa2),
-                        contentDescription = null
+                        painter = painterResource(id = R.drawable.imagen3),
+                        contentDescription = null,
                     )
-                    Column() {
-                        Text(
-                            text = "Dua Lipa",
-                            modifier = Modifier
-                                .padding(top = 10.dp)
-                                .padding(horizontal = 25.dp),
-                            fontSize = 20.sp
-                        )
-                        Text(
-                            text = "Majadas 11",
-                            modifier = Modifier
-                                .padding(top = 0.dp)
-                                .padding(horizontal = 25.dp),
-                            fontSize = 18.sp
-                        )
-                    }
+
+                    Text(
+                        text = "Edit Profile",
+                        modifier = Modifier
+                            .padding(top = 25.dp)
+                            .padding(horizontal = 25.dp),
+                        fontSize = 22.sp
+                    )
                     Spacer(modifier = Modifier.weight(1f))
                     IconButton(onClick = { /*TODO*/ }, modifier = Modifier.size(75.dp)) {
                         Icon(
@@ -92,9 +120,9 @@ fun lugares() {
                         )
 
                     }
-
                 }
             }
+
         }
 
         Box(
@@ -102,34 +130,26 @@ fun lugares() {
                 .background(Color.LightGray)
                 .height(100.dp)
                 .fillMaxWidth(),
-        ){
+        ) {
             Box(
                 modifier = Modifier.padding(10.dp)
+            ) {
+                Row {
 
-            ){
-                Row() {
                     Image(
                         modifier = Modifier
                             .clip(CircleShape),
-                        painter = painterResource(id = R.drawable.taylorswit),
+                        painter = painterResource(id = R.drawable.candado2),
                         contentDescription = null
                     )
-                    Column() {
-                        Text(
-                            text = "Taylor Swift",
-                            modifier = Modifier
-                                .padding(top = 10.dp)
-                                .padding(horizontal = 25.dp),
-                            fontSize = 20.sp
-                        )
-                        Text(
-                            text = "Estadio Mateo Flores",
-                            modifier = Modifier
-                                .padding(top = 0.dp)
-                                .padding(horizontal = 25.dp),
-                            fontSize = 18.sp
-                        )
-                    }
+
+                    Text(
+                        text = "Reset Password",
+                        modifier = Modifier
+                            .padding(top = 25.dp)
+                            .padding(horizontal = 25.dp),
+                        fontSize = 22.sp
+                    )
                     Spacer(modifier = Modifier.weight(1f))
                     IconButton(onClick = { /*TODO*/ }, modifier = Modifier.size(75.dp)) {
                         Icon(
@@ -140,9 +160,9 @@ fun lugares() {
                         )
 
                     }
-
                 }
             }
+
         }
 
         Box(
@@ -150,47 +170,32 @@ fun lugares() {
                 .background(Color.LightGray)
                 .height(100.dp)
                 .fillMaxWidth(),
-        ){
+        ) {
             Box(
                 modifier = Modifier.padding(10.dp)
+            ) {
+                Row {
 
-            ){
-                Row() {
                     Image(
                         modifier = Modifier
                             .clip(CircleShape),
-                        painter = painterResource(id = R.drawable.vicentefernandez2),
+                        painter = painterResource(id = R.drawable.profilepic),
                         contentDescription = null
                     )
-                    Column() {
-                        Text(
-                            text = "Vicente Fernandez",
-                            modifier = Modifier
-                                .padding(top = 10.dp)
-                                .padding(horizontal = 25.dp),
-                            fontSize = 20.sp
-                        )
-                        Text(
-                            text = "Cayala",
-                            modifier = Modifier
-                                .padding(top = 0.dp)
-                                .padding(horizontal = 25.dp),
-                            fontSize = 18.sp
-                        )
-                    }
-                    Spacer(modifier = Modifier.weight(1f))
-                    IconButton(onClick = { /*TODO*/ }, modifier = Modifier.size(75.dp)) {
-                        Icon(
-                            modifier = Modifier
-                                .size(30.dp),
-                            painter = painterResource(id = R.drawable.boton),
-                            contentDescription = null
-                        )
 
-                    }
+                    Text(
+                        text = "Notifications",
+                        modifier = Modifier
+                            .padding(top = 25.dp)
+                            .padding(horizontal = 25.dp),
+                        fontSize = 22.sp
+                    )
 
+                    Image(modifier = Modifier.padding(horizontal = 20.dp), painter = painterResource(id = R.drawable.imagen4),
+                        contentDescription = null)
                 }
             }
+
         }
 
         Box(
@@ -198,34 +203,26 @@ fun lugares() {
                 .background(Color.LightGray)
                 .height(100.dp)
                 .fillMaxWidth(),
-        ){
+        ) {
             Box(
                 modifier = Modifier.padding(10.dp)
+            ) {
+                Row {
 
-            ){
-                Row() {
                     Image(
                         modifier = Modifier
                             .clip(CircleShape),
-                        painter = painterResource(id = R.drawable.enanosverdes),
+                        painter = painterResource(id = R.drawable.estrella2),
                         contentDescription = null
                     )
-                    Column() {
-                        Text(
-                            text = "Enanitos Verdes",
-                            modifier = Modifier
-                                .padding(top = 10.dp)
-                                .padding(horizontal = 25.dp),
-                            fontSize = 20.sp
-                        )
-                        Text(
-                            text = "Casa de Kou",
-                            modifier = Modifier
-                                .padding(top = 0.dp)
-                                .padding(horizontal = 25.dp),
-                            fontSize = 18.sp
-                        )
-                    }
+
+                    Text(
+                        text = "Favoritos",
+                        modifier = Modifier
+                            .padding(top = 25.dp)
+                            .padding(horizontal = 25.dp),
+                        fontSize = 22.sp
+                    )
                     Spacer(modifier = Modifier.weight(1f))
                     IconButton(onClick = { /*TODO*/ }, modifier = Modifier.size(75.dp)) {
                         Icon(
@@ -236,9 +233,9 @@ fun lugares() {
                         )
 
                     }
-
                 }
             }
+
         }
     }
 }
