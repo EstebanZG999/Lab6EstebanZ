@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -19,6 +20,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -31,6 +33,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.lab6ez.Navigation.AppNavigation
+import com.example.lab6ez.Navigation.TabScreens
 import com.example.lab6ez.R
 import com.example.lab6ez.ui.theme.Lab6EZTheme
 
@@ -45,10 +48,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun mainScreen(navController: NavController){
-
-}
 
 @Composable
 fun principal(navController: NavController) {
@@ -91,17 +90,17 @@ fun principal(navController: NavController) {
                 Row() {
                     Spacer(modifier = Modifier.weight(1f))
 
-                    Button(onClick = { /*TODO*/ }) {
+                    Button(onClick = { navController.navigate(route = TabScreens.DetallesScreen.route)}) {
                         Text(text = "Detalles")
                     }
                     Spacer(modifier = Modifier.weight(1f))
 
-                    Button(onClick = { /*TODO*/ }) {
-                        Text(text = "ListaLugares")
+                    Button(onClick = { navController.navigate(route = TabScreens.ListaLugaresScreen.route) }) {
+                        Text(text = "Lista Lugares")
                     }
                     Spacer(modifier = Modifier.weight(1f))
 
-                    Button(onClick = { /*TODO*/ }) {
+                    Button(onClick = { navController.navigate(route = TabScreens.ProfileScreen.route) }) {
                         Text(text = "Profile")
                     }
                     Spacer(modifier = Modifier.weight(1f))
@@ -183,7 +182,8 @@ fun principal(navController: NavController) {
                             modifier = Modifier
                                 .width(185.dp)
                                 .height(240.dp)
-                                .padding(10.dp),
+                                .padding(10.dp)
+                                .clickable { navController.navigate(route = TabScreens.DetallesScreen.route) },
                             shape = RoundedCornerShape(15.dp)
                         ) {
                             Box(modifier = Modifier.fillMaxSize()) {

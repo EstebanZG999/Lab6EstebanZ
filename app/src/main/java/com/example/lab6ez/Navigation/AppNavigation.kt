@@ -4,9 +4,6 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.lab6ez.Screens.Detalles
-import com.example.lab6ez.Screens.MainActivity
-import com.example.lab6ez.Screens.Profile
 import com.example.lab6ez.Screens.detalles
 import com.example.lab6ez.Screens.lugares
 import com.example.lab6ez.Screens.principal
