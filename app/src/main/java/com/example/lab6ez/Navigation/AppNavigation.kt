@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.lab6ez.Screens.detalles
+import com.example.lab6ez.Screens.favoritos
 import com.example.lab6ez.Screens.lugares
 import com.example.lab6ez.Screens.principal
 import com.example.lab6ez.Screens.profile
@@ -24,6 +25,9 @@ fun AppNavigation(){
         }
         composable(route = TabScreens.ProfileScreen.route){
             profile(navController)
+        }
+        composable(route = TabScreens.FavoritosScreen.route){
+            favoritos(navController)
         }
     }
 }

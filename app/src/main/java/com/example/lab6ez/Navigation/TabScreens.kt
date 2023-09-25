@@ -5,4 +5,5 @@ sealed class TabScreens(val route: String){
     object DetallesScreen: TabScreens("detalles")
     object ListaLugaresScreen: TabScreens("lugares")
     object ProfileScreen: TabScreens("profile")
+    object FavoritosScreen: TabScreens("favoritos")
 }

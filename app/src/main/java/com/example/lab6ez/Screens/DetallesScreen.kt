@@ -133,7 +133,12 @@ fun detalles(navController: NavController) {
         }
         Box(modifier = Modifier.padding(10.dp)){
             Row() {
-                Button(onClick = { navController.popBackStack()}) {
+                Spacer(modifier = Modifier.width(10.dp))
+                Button(onClick = { navController.navigate(route = TabScreens.FavoritosScreen.route)}) {
+                    Text(text = "Agregar a Favoritos")
+                }
+                Spacer(modifier = Modifier.width(10.dp))
+                Button(modifier = Modifier.size(400.dp), onClick = { navController.popBackStack()}) {
                     Text(text = "Atras")
                 }
             }

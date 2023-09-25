@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -87,23 +88,25 @@ fun principal(navController: NavController) {
                     .height(75.dp)
                     .background(Color.LightGray)
             ) {
-                Row() {
-                    Spacer(modifier = Modifier.weight(1f))
+                LazyRow(){
+                    item {
 
-                    Button(onClick = { navController.navigate(route = TabScreens.DetallesScreen.route)}) {
-                        Text(text = "Detalles")
-                    }
-                    Spacer(modifier = Modifier.weight(1f))
+                        Button(onClick = { navController.navigate(route = TabScreens.DetallesScreen.route)}) {
+                            Text(text = "Detalles")
+                        }
 
-                    Button(onClick = { navController.navigate(route = TabScreens.ListaLugaresScreen.route) }) {
-                        Text(text = "Lista Lugares")
-                    }
-                    Spacer(modifier = Modifier.weight(1f))
+                        Button(onClick = { navController.navigate(route = TabScreens.ListaLugaresScreen.route) }) {
+                            Text(text = "Lista Lugares")
+                        }
 
-                    Button(onClick = { navController.navigate(route = TabScreens.ProfileScreen.route) }) {
-                        Text(text = "Profile")
+                        Button(onClick = { navController.navigate(route = TabScreens.ProfileScreen.route) }) {
+                            Text(text = "Profile")
+                        }
+                        Button(onClick = { navController.navigate(route = TabScreens.FavoritosScreen.route) }) {
+                            Text(text = "Favoritos")
+                        }
                     }
-                    Spacer(modifier = Modifier.weight(1f))
+
                 }
             }
 
@@ -127,7 +130,8 @@ fun principal(navController: NavController) {
                             modifier = Modifier
                                 .width(185.dp)
                                 .height(240.dp)
-                                .padding(10.dp),
+                                .padding(10.dp)
+                                .clickable { navController.navigate(route = TabScreens.DetallesScreen.route) },
                             shape = RoundedCornerShape(15.dp)
                         ) {
                             Box(modifier = Modifier.fillMaxSize()) {
@@ -153,7 +157,8 @@ fun principal(navController: NavController) {
                             modifier = Modifier
                                 .width(185.dp)
                                 .height(240.dp)
-                                .padding(10.dp),
+                                .padding(10.dp)
+                                .clickable { navController.navigate(route = TabScreens.DetallesScreen.route) },
                             shape = RoundedCornerShape(15.dp)
                         ) {
                             Box(modifier = Modifier.fillMaxSize()) {
@@ -209,7 +214,8 @@ fun principal(navController: NavController) {
                             modifier = Modifier
                                 .width(185.dp)
                                 .height(240.dp)
-                                .padding(10.dp),
+                                .padding(10.dp)
+                                .clickable { navController.navigate(route = TabScreens.DetallesScreen.route) },
                             shape = RoundedCornerShape(15.dp)
                         ) {
                             Box(modifier = Modifier.fillMaxSize()) {
@@ -237,7 +243,8 @@ fun principal(navController: NavController) {
                             modifier = Modifier
                                 .width(185.dp)
                                 .height(240.dp)
-                                .padding(10.dp),
+                                .padding(10.dp)
+                                .clickable { navController.navigate(route = TabScreens.DetallesScreen.route) },
                             shape = RoundedCornerShape(15.dp)
                         ) {
                             Box(modifier = Modifier.fillMaxSize()) {
@@ -263,7 +270,8 @@ fun principal(navController: NavController) {
                             modifier = Modifier
                                 .width(185.dp)
                                 .height(240.dp)
-                                .padding(10.dp),
+                                .padding(10.dp)
+                                .clickable { navController.navigate(route = TabScreens.DetallesScreen.route) },
                             shape = RoundedCornerShape(15.dp)
                         ) {
                             Box(modifier = Modifier.fillMaxSize()) {
@@ -307,7 +315,8 @@ fun principal(navController: NavController) {
                             modifier = Modifier
                                 .width(185.dp)
                                 .height(240.dp)
-                                .padding(10.dp),
+                                .padding(10.dp)
+                                .clickable { navController.navigate(route = TabScreens.DetallesScreen.route) },
                             shape = RoundedCornerShape(15.dp)
                         ) {
                             Box(modifier = Modifier.fillMaxSize()) {
@@ -333,7 +342,8 @@ fun principal(navController: NavController) {
                             modifier = Modifier
                                 .width(185.dp)
                                 .height(240.dp)
-                                .padding(10.dp),
+                                .padding(10.dp)
+                                .clickable { navController.navigate(route = TabScreens.DetallesScreen.route) },
                             shape = RoundedCornerShape(15.dp)
                         ) {
                             Box(modifier = Modifier.fillMaxSize()) {
@@ -362,7 +372,8 @@ fun principal(navController: NavController) {
                             modifier = Modifier
                                 .width(185.dp)
                                 .height(240.dp)
-                                .padding(10.dp),
+                                .padding(10.dp)
+                                .clickable { navController.navigate(route = TabScreens.DetallesScreen.route) },
                             shape = RoundedCornerShape(15.dp)
                         ) {
                             Box(modifier = Modifier.fillMaxSize()) {
@@ -388,7 +399,8 @@ fun principal(navController: NavController) {
                             modifier = Modifier
                                 .width(185.dp)
                                 .height(240.dp)
-                                .padding(10.dp),
+                                .padding(10.dp)
+                                .clickable { navController.navigate(route = TabScreens.DetallesScreen.route) },
                             shape = RoundedCornerShape(15.dp)
                         ) {
                             Box(modifier = Modifier.fillMaxSize()) {
