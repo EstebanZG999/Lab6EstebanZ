@@ -43,12 +43,18 @@ class FavoritosScreen : ComponentActivity() {
 @Composable
 fun favoritos(navController: NavController) {
     Column {
+        Button(
+            modifier = Modifier.width(100.dp).height(50.dp).padding(vertical = 5.dp),
+            onClick = { navController.popBackStack() }) {
+            Text(text = "Atras")
+        }
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(75.dp)
                 .background(Color.White)
         ) {
+
             Row() {
                 Text(
                     text = "Tus Favoritos",
@@ -65,11 +71,11 @@ fun favoritos(navController: NavController) {
                 .background(Color.LightGray)
                 .height(100.dp)
                 .fillMaxWidth(),
-        ){
+        ) {
             Box(
                 modifier = Modifier.padding(10.dp)
 
-            ){
+            ) {
                 Row() {
                     Image(
                         modifier = Modifier
@@ -95,14 +101,6 @@ fun favoritos(navController: NavController) {
                     }
                     Spacer(modifier = Modifier.weight(1f))
 
-                }
-            }
-        }
-        Box(modifier = Modifier.padding(10.dp)){
-            Row() {
-                Spacer(modifier = Modifier.width(150.dp))
-                Button(onClick = { navController.popBackStack()}) {
-                    Text(text = "Atras")
                 }
             }
         }

@@ -48,17 +48,23 @@ class Profile : ComponentActivity() {
 @Composable
 fun profile(navController: NavController) {
     Column() {
+        Button(modifier = Modifier.width(100.dp).height(50.dp).padding(vertical = 5.dp), onClick = { navController.popBackStack()}) {
+            Text(text = "Atras")
+        }
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(300.dp)
                 .background(Color.Blue), contentAlignment = Alignment.Center
         ) {
+
             Image(
                 painter = painterResource(id = R.drawable.imagen1),
                 contentDescription = null,
                 contentScale = ContentScale.Crop
             )
+
+
             Box(
                 modifier = Modifier
                     .width(140.dp)
@@ -236,14 +242,6 @@ fun profile(navController: NavController) {
                 }
             }
 
-        }
-        Box(modifier = Modifier.padding(10.dp)){
-            Row() {
-                Spacer(modifier = Modifier.width(150.dp))
-                Button(onClick = { navController.popBackStack()}) {
-                    Text(text = "Atras")
-                }
-            }
         }
     }
 }

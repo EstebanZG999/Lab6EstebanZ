@@ -51,6 +51,7 @@ fun detalles(navController: NavController) {
                 .height(350.dp)
                 .background(Color.Blue),
         ){
+
             Image(
                 painter = painterResource(id = R.drawable.concierto2),
                 contentDescription = null,
@@ -63,6 +64,10 @@ fun detalles(navController: NavController) {
                 color = Color.White,
                 fontSize = 24.sp, fontStyle = FontStyle.Italic
             )
+
+            Button(modifier = Modifier.width(100.dp).height(50.dp).padding(vertical = 5.dp), onClick = { navController.popBackStack()}) {
+                Text(text = "Atras")
+            }
         }
 
         Row() {
@@ -130,13 +135,9 @@ fun detalles(navController: NavController) {
         }
         Box(modifier = Modifier.padding(10.dp)){
             Row() {
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(100.dp))
                 Button(onClick = { navController.navigate(route = TabScreens.FavoritosScreen.route)}) {
                     Text(text = "Agregar a Favoritos")
-                }
-                Spacer(modifier = Modifier.width(10.dp))
-                Button(modifier = Modifier.size(400.dp), onClick = { navController.popBackStack()}) {
-                    Text(text = "Atras")
                 }
             }
         }

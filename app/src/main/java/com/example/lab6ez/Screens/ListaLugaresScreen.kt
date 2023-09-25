@@ -46,6 +46,9 @@ class ListaLugares : ComponentActivity() {
 @Composable
 fun lugares(navController: NavController) {
     Column {
+        Button(modifier = Modifier.width(100.dp).height(50.dp).padding(vertical = 5.dp), onClick = { navController.popBackStack()}) {
+            Text(text = "Atras")
+        }
         Box(
             modifier = Modifier
                 .background(Color.LightGray)
@@ -234,14 +237,6 @@ fun lugares(navController: NavController) {
 
                     }
 
-                }
-            }
-        }
-        Box(modifier = Modifier.padding(10.dp)){
-            Row() {
-                Spacer(modifier = Modifier.width(150.dp))
-                Button(onClick = { navController.popBackStack()}) {
-                    Text(text = "Atras")
                 }
             }
         }
